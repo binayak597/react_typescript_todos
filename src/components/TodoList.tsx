@@ -12,14 +12,27 @@ interface TodoListProps {
 
 const TodoList = ({todos, setTodos}: TodoListProps) => {
   return (
-    <div className='todos'>
+    
+    <div className="container">
 
-      {todos.map(t => (
+      <div className="todos">
 
-        <SingleTodo key={t.id} todo = {t} todos={todos} setTodos={setTodos} />
+        <span className="todos__heading">Active Tasks</span>
+
+        {todos.map(todo => (
+
+          <SingleTodo key={todo.id} todo={todo} todos={todos} setTodos={setTodos} />
+        ))}
+      </div>
+      <div className="todos remove">
+
+      <span className="todos__heading">Completed Tasks</span>
+
+      {todos.map(todo => (
+
+      <SingleTodo key={todo.id} todo={todo} todos={todos} setTodos={setTodos} />
       ))}
-
-
+      </div>
     </div>
   )
 }
