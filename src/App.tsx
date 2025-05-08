@@ -5,6 +5,7 @@ import InputField from './components/InputField'
 import './App.css'
 
 import type { Todo } from './model'
+import TodoList from './components/TodoList'
 
 
 const App: React.FC = () => {
@@ -32,6 +33,8 @@ const App: React.FC = () => {
 
       <span className='heading'>Todos</span>
       <InputField todo={todo} setTodo={setTodo} handleAdd = {handleAdd}/>
+      <TodoList todos={todos} setTodos={setTodos} />
+
     </div>
   )
 }
